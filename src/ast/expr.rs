@@ -539,7 +539,7 @@ impl<'t> Expr<'t> {
                 return Err(crate::CodegenError::UnsupportedExpression)
               }
             },
-            self::Var { .. } => {
+            Self::Var { .. } => {
               // Can only concatenate literals.
               return Err(crate::CodegenError::UnsupportedExpression)
             },
