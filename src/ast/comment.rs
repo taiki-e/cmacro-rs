@@ -1,4 +1,4 @@
-use std::borrow::Cow;
+use std::{borrow::Cow, convert::TryFrom};
 
 use nom::{
   bytes::complete::{tag, take_until},

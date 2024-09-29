@@ -1,5 +1,6 @@
 use std::{
   borrow::Cow,
+  convert::TryFrom,
   fmt::Debug,
   iter,
   str::{self, Utf8Error},

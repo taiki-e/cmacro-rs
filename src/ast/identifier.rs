@@ -1,4 +1,4 @@
-use std::{borrow::Cow, fmt::Debug};
+use std::{borrow::Cow, convert::TryFrom, fmt::Debug};
 
 use nom::{
   branch::alt,

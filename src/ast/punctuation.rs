@@ -1,3 +1,5 @@
+use std::convert::TryFrom;
+
 /// Punctuation.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Punctuation<'t> {

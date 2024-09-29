@@ -1,4 +1,5 @@
 use std::{
+  convert::TryFrom,
   fmt::Debug,
   ops::{Add, BitAnd, BitOr, BitXor, Div, Mul, Rem, Shl, Shr, Sub},
   str,

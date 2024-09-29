@@ -1,4 +1,4 @@
-use std::{fmt::Debug, ops::RangeFrom};
+use std::{convert::TryFrom, fmt::Debug, ops::RangeFrom};
 
 use nom::{
   branch::alt,

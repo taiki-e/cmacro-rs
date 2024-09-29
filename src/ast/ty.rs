@@ -1,4 +1,4 @@
-use std::{fmt::Debug, str::FromStr};
+use std::{convert::TryFrom, fmt::Debug, str::FromStr};
 
 use nom::{
   branch::{alt, permutation},

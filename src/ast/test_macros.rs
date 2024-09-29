@@ -1,5 +1,6 @@
 macro_rules! comment {
   ($comment:expr) => {{
+    use std::convert::TryFrom;
     $crate::ast::Comment::try_from($comment).unwrap()
   }};
 }
@@ -27,9 +28,10 @@ macro_rules! id {
 pub(crate) use id;
 
 macro_rules! id_cont {
-  ($id_cont:expr) => {
+  ($id_cont:expr) => {{
+    use std::convert::TryFrom;
     $crate::ast::IdentifierContinue::try_from($id_cont).unwrap()
-  };
+  }};
 }
 pub(crate) use id_cont;
 
@@ -54,21 +56,26 @@ macro_rules! lit_float {
 pub(crate) use lit_float;
 
 macro_rules! lit_char {
-  ($c:literal) => {
+  ($c:literal) => {{
+    use std::convert::TryFrom;
     $crate::ast::Lit::Char($crate::ast::LitChar::Ordinary(u8::try_from($c).unwrap()))
-  };
-  (u8 $c:literal) => {
+  }};
+  (u8 $c:literal) => {{
+    use std::convert::TryFrom;
     $crate::ast::Lit::Char($crate::ast::LitChar::Utf8(u8::try_from($c).unwrap()))
-  };
-  (u $c:literal) => {
+  }};
+  (u $c:literal) => {{
+    use std::convert::TryFrom;
     $crate::ast::Lit::Char($crate::ast::LitChar::Utf16(u16::try_from($c).unwrap()))
-  };
-  (U $c:literal) => {
+  }};
+  (U $c:literal) => {{
+    use std::convert::TryFrom;
     $crate::ast::Lit::Char($crate::ast::LitChar::Utf32(u32::try_from($c).unwrap()))
-  };
-  (L $c:literal) => {
+  }};
+  (L $c:literal) => {{
+    use std::convert::TryFrom;
     $crate::ast::Lit::Char($crate::ast::LitChar::Wide(u32::try_from($c).unwrap()))
-  };
+  }};
 }
 pub(crate) use lit_char;
 
@@ -122,6 +129,7 @@ pub(crate) use ty;
 
 macro_rules! punct {
   ($punct:expr) => {{
+    use std::convert::TryFrom;
     $crate::ast::Punctuation::try_from($punct).unwrap()
   }};
 }

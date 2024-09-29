@@ -1,6 +1,7 @@
 use std::{
   borrow::Cow,
   collections::{HashMap, HashSet},
+  convert::TryFrom,
   error::Error,
   fmt,
   iter::IntoIterator,
@@ -390,9 +391,9 @@ fn detokenize<'t>(arg_names: &[Token<'t>], tokens: Vec<Token<'t>>) -> Result<Vec
 
 enum CollectArgsError {
   /// Open parenthesis not found.
-  MissingOpenParenthesis(char),
+  MissingOpenParenthesis(#[allow(dead_code)] char),
   /// Unclosed parenthesis.
-  UnclosedParenthesis(char),
+  UnclosedParenthesis(#[allow(dead_code)] char),
 }
 
 #[derive(Debug, Clone, PartialEq)]
